@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tahmaz Co — تقرير فحص SEO وخطة 6 أشهر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0b1016;--ink2:#141b24;--line-d:#26313e;--mut-d:#8d9bab;--tx-d:#e9edf2;
+  --paper:#f2eee6;--paper2:#e8e2d6;--line-l:#cfc7b7;--mut-l:#5f6670;--tx-l:#10161d;
+  --acc:#d8f24a;--accL:#0e5a52;--bad:#ff6246;--badL:#c2381f;--good:#3ccf91;--goodL:#14804f;
+  --f:'IBM Plex Sans Arabic','Segoe UI',Tahoma,sans-serif;--m:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--f);background:var(--ink);color:var(--tx-d);line-height:1.9;font-size:17px;overflow-x:hidden}
+.num,.lat{font-family:var(--m);direction:ltr;unicode-bidi:isolate;display:inline-block}
+.lat{font-family:var(--f);font-weight:500}
+section.scene{position:relative;min-height:100vh;padding:120px 6vw 90px;display:flex;flex-direction:column;justify-content:center}
+.dark{background:var(--ink);color:var(--tx-d)}
+.light{background:var(--paper);color:var(--tx-l)}
+.wrap{max-width:1240px;width:100%;margin:0 auto}
+.kicker{font-family:var(--m);font-size:13px;letter-spacing:.08em;direction:ltr;text-align:right;color:var(--acc);margin-bottom:18px;display:flex;gap:12px;align-items:center;justify-content:flex-end}
+.light .kicker{color:var(--accL)}
+.kicker:before{content:"";width:36px;height:1px;background:currentColor;order:2}
+h1,h2,h3,h4{font-weight:700;line-height:1.45}
+h2.t{font-size:clamp(34px,4.6vw,64px);max-width:16em;margin-bottom:28px}
+h3.s{font-size:clamp(22px,2.2vw,30px);margin-bottom:14px}
+p{max-width:36em;margin-bottom:14px}
+.mut{color:var(--mut-d)}.light .mut{color:var(--mut-l)}
+.grid{display:grid;gap:56px;align-items:center}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.g2,.g3{grid-template-columns:1fr}section.scene{padding:100px 22px 70px}.grid{gap:34px}}
+/* nav */
+#nav{position:fixed;top:0;inset-inline:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:14px 6vw;mix-blend-mode:normal;pointer-events:none}
+#nav>*{pointer-events:auto}
+.brand{font-family:var(--m);font-size:13px;direction:ltr;opacity:.85;background:rgba(11,16,22,.55);padding:6px 12px;backdrop-filter:blur(8px);color:var(--tx-d)}
+.steps{display:flex;gap:4px;background:rgba(11,16,22,.72);backdrop-filter:blur(10px);padding:6px;border:1px solid #ffffff1c}
+.steps a{color:#9fabb9;text-decoration:none;font-size:13px;padding:5px 14px;position:relative;white-space:nowrap;transition:.3s}
+.steps a.on{color:var(--ink);background:var(--acc)}
+.steps a:not(:last-child):after{content:"";}
+@media(max-width:700px){.steps a{padding:4px 7px;font-size:11px}.brand{display:none}}
+#prog{position:fixed;top:0;inset-inline-start:0;height:2px;background:var(--acc);z-index:60;width:0}
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--d,0)*90ms)}
+.in .rv,.rv.in{opacity:1;transform:none}
+/* cover */
+#cover{background:radial-gradient(1200px 600px at 20% 20%,#16232b 0,var(--ink) 60%);overflow:hidden}
+#cover h1{font-size:clamp(46px,8vw,128px);line-height:1.25;font-weight:700}
+#cover h1 em{font-style:normal;color:var(--acc)}
+.cmeta{display:flex;gap:48px;margin-top:44px;flex-wrap:wrap;font-size:16px}
+.cmeta b{display:block;font-family:var(--m);font-size:12px;color:var(--mut-d);font-weight:400;direction:ltr;text-align:right;margin-bottom:4px}
+.journey{display:flex;margin-top:70px;border-top:1px solid var(--line-d)}
+.journey a{flex:1;padding:18px 0;color:var(--mut-d);text-decoration:none;font-size:15px;position:relative}
+.journey a span{display:block;font-family:var(--m);color:var(--acc);font-size:12px}
+.journey a:before{content:"";position:absolute;top:-1px;right:0;height:1px;width:0;background:var(--acc);transition:width 1.6s .5s}
+.in .journey a:before{width:90%}
+.orbit{position:absolute;left:-8vw;top:50%;width:46vw;max-width:640px;transform:translateY(-50%);opacity:.5}
+@media(max-width:900px){.orbit{display:none}}
+/* chapter divider */
+.chap{min-height:70vh!important;justify-content:center}
+.chap .big{font-size:clamp(70px,16vw,240px);font-weight:700;line-height:1.2;color:transparent;-webkit-text-stroke:1px currentColor;opacity:.9}
+.chap h2{font-size:clamp(30px,4vw,56px);margin-top:-10px}
+/* tags */
+.pill{display:inline-block;font-size:13px;padding:2px 12px;border:1px solid currentColor;margin-inline-start:8px;line-height:1.7;vertical-align:middle}
+.bad{color:var(--bad)}.light .bad{color:var(--badL)}.good{color:var(--good)}.light .good{color:var(--goodL)}
+ul.l{list-style:none}
+ul.l li{padding:9px 0;border-bottom:1px solid var(--line-d);display:flex;gap:14px;align-items:baseline}
+.light ul.l li{border-color:var(--line-l)}
+ul.l li:before{content:"";flex:none;width:8px;height:8px;background:var(--acc);transform:translateY(-1px)}
+.light ul.l li:before{background:var(--accL)}
+ul.l.x li:before{background:none;border:1.5px solid var(--bad);width:9px;height:9px;transform:rotate(45deg) translateY(-2px)}
+ul.l.ok li:before{background:var(--good)}
+.light ul.l.ok li:before{background:var(--goodL)}
+.note{border-inline-start:3px solid var(--acc);padding:4px 18px;margin:18px 0;max-width:36em}
+.light .note{border-color:var(--accL)}
+.note.r{border-color:var(--bad)}
+/* profile */
+.sectors{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-l);border:1px solid var(--line-l)}
+.sectors div{background:var(--paper);padding:22px 16px;font-size:15px;min-height:110px;line-height:1.7;display:flex;flex-direction:column;justify-content:space-between}
+.sectors div i{font-style:normal;font-family:var(--m);font-size:12px;color:var(--accL)}
+.sectors div.big{grid-column:span 1;background:var(--tx-l);color:var(--paper);align-items:flex-start}
+.sectors div.big .num{font-size:44px;line-height:1.2}
+@media(max-width:700px){.sectors{grid-template-columns:repeat(2,1fr)}}
+/* serp */
+.serp{background:#fff;color:#202124;padding:26px 28px;direction:ltr;text-align:left;font-family:Arial,sans-serif;box-shadow:0 30px 60px #0006;position:relative;max-width:520px}
+.serp .u{font-size:13px;color:#4d5156}.serp .ti{font-size:21px;color:#1a0dab;margin:2px 0 4px}
+.serp .ds{font-size:14px;color:#9aa0a6;font-style:italic;border:1px dashed #d0d4d9;padding:6px 10px;font-family:var(--f);direction:rtl;text-align:center}
+.serp+.serp{margin-top:14px;margin-inline-start:34px}
+.serp .tag{position:absolute;top:-10px;right:14px;background:var(--bad);color:#fff;font:11px var(--m);padding:2px 8px}
+/* hierarchy */
+.tree{display:flex;flex-direction:column;align-items:center;gap:0;font-family:var(--m);direction:ltr}
+.tree .n{padding:10px 26px;border:1.5px solid var(--tx-l);background:var(--paper);min-width:140px;text-align:center;position:relative;z-index:2}
+.tree .n.h1{background:var(--tx-l);color:var(--paper)}
+.tree .gap{width:140px;height:70px;border:1.5px dashed var(--badL);color:var(--badL);display:flex;align-items:center;justify-content:center;margin:0}
+.tree .ln{width:0;height:34px;border-inline-start:1.5px solid var(--tx-l);transform-origin:top;transform:scaleY(0);transition:transform .9s .3s}
+.tree .ln.r{border-color:var(--badL);border-style:dashed}
+.in .tree .ln{transform:scaleY(1)}
+.tree .row{display:flex;gap:12px}
+.cap{font-family:var(--m);font-size:12px;color:var(--mut-l);margin-top:14px;direction:rtl;text-align:center}
+/* dots */
+.dots{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin:26px 0 8px}
+.dots div{aspect-ratio:1;border:1.5px dashed var(--line-l);display:flex;align-items:flex-end;padding:6px;font-size:11px;line-height:1.4;position:relative;transition:.6s;transition-delay:calc(var(--i)*100ms)}
+.dots div.f{background:var(--accL);color:#fff;border-style:solid;border-color:var(--accL)}
+/* bars */
+.bars{display:flex;flex-direction:column;gap:14px}
+.bar{display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:center}
+.bar .lb{font-size:15px}
+.trk{height:34px;background:#ffffff10;position:relative;direction:ltr}
+.light .trk{background:#0000000d}
+.fill{height:100%;width:0;background:var(--acc);display:flex;align-items:center;justify-content:flex-end;padding:0 10px;font-family:var(--m);font-size:14px;color:var(--ink);transition:width 1.6s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--d,0)*160ms)}
+.light .fill{background:var(--tx-l);color:var(--paper)}
+.in .fill{width:var(--w)}
+.fill.b{background:var(--bad);color:#fff}.light .fill.b{background:var(--badL)}
+.fill.alt{background:#7f8fa1;color:var(--ink)}
+.light .fill.alt{background:#a39b88;color:#10161d}
+.tick{position:absolute;top:-6px;bottom:-6px;border-inline-start:1.5px dashed var(--good);width:0}
+.tick span{position:absolute;top:auto;bottom:-22px;left:-4px;font:11px var(--m);color:var(--good);white-space:nowrap}
+.axis{display:flex;justify-content:space-between;font:11px var(--m);color:var(--mut-d);margin-top:6px;direction:ltr;padding-inline-start:166px}
+.legend{display:flex;gap:22px;font-size:14px;margin-bottom:22px}
+.legend i{display:inline-block;width:12px;height:12px;margin-inline-end:8px;vertical-align:-1px}
+.big-n{font-size:clamp(70px,10vw,150px);line-height:1.1;font-weight:700;font-family:var(--m);direction:ltr;display:block}
+.big-n small{font-size:.28em;color:var(--mut-d);margin-inline-start:6px}
+.light .big-n small{color:var(--mut-l)}
+/* gauge */
+.gauges{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.gauge{text-align:center;position:relative}
+.gauge svg{width:100%;max-width:260px;transform:rotate(-90deg)}
+.gauge circle{fill:none;stroke-width:9}
+.gauge .bg{stroke:#ffffff14}
+.gauge .pg{stroke-dasharray:326.7;stroke-dashoffset:326.7;transition:stroke-dashoffset 2s cubic-bezier(.2,.7,.2,1) .2s;stroke:var(--bad)}
+.gauge .pg.m{stroke:var(--acc)}
+.in .gauge .pg{stroke-dashoffset:calc(326.7 - 326.7*var(--p)/100)}
+.gauge .v{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-bottom:34px}
+.gauge .v b{font:500 56px/1 var(--m)}.gauge .v small{font:12px var(--m);color:var(--mut-d)}
+.gauge h4{font-size:18px;margin-top:-6px}
+.gauge p{margin:6px auto 0;font-size:14px;color:var(--mut-d)}
+/* lighthouse */
+.lh{display:grid;grid-template-columns:140px 1fr;gap:10px 18px;align-items:center}
+.lh .hd{grid-column:2;display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:13px;color:var(--mut-d)}
+.lh .two{display:grid;gap:6px}
+.lh .trk{height:22px}
+.lh .fill{font-size:12px}
+/* schema */
+.schema{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.schema div{border:1.5px dashed var(--bad);padding:30px 14px;text-align:center;font:500 16px var(--m);direction:ltr;position:relative}
+.schema div:after{content:"✕";position:absolute;top:6px;right:10px;color:var(--bad);font-size:13px}
+.schema.h{margin-top:14px}
+@media(max-width:700px){.schema{grid-template-columns:repeat(2,1fr)}}
+/* eeat */
+.eeat{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line-d);margin:20px 0}
+.eeat div{background:var(--ink2);padding:22px 14px;text-align:center}
+.eeat b{display:block;font:700 46px/1 var(--m);color:var(--acc);margin-bottom:10px}
+.eeat span{font-size:14px;display:block;line-height:1.5}.eeat small{font:11px var(--m);color:var(--mut-d)}
+/* timeline small */
+.tl{position:relative;padding:28px 0;direction:ltr}
+.tl .ax{height:2px;background:var(--line-d);position:relative}
+.tl .ax:after{content:"";position:absolute;inset:0;background:var(--bad);transform-origin:left;transform:scaleX(0);transition:transform 2s}
+.in .tl .ax:after{transform:scaleX(1)}
+.tl .ev{display:flex;justify-content:space-between;font:13px var(--m);margin-top:12px;color:var(--mut-d)}
+.tl .ev b{color:var(--tx-d);font-weight:500}
+/* flow */
+.flow{display:grid;grid-template-columns:1fr 70px 1.2fr;align-items:center;gap:0}
+.fnode{border:1.5px solid var(--tx-d);padding:18px;text-align:center;font-size:17px}
+.dark .fnode.dim{border-style:dashed;border-color:#586677;color:#8c99a8;margin-top:10px}
+.fbranch{display:flex;flex-direction:column}
+.fnode.on{background:var(--acc);color:var(--ink);border-color:var(--acc);margin-top:10px}
+.fnode.on:first-child{margin-top:0}
+.farrow{height:2px;background:var(--acc);transform-origin:right;transform:scaleX(0);transition:transform 1s .4s}
+.in .farrow{transform:scaleX(1)}
+.fgrp{font:12px var(--m);color:var(--mut-d);margin:18px 0 8px;direction:ltr;text-align:right}
+@media(max-width:700px){.flow{grid-template-columns:1fr}.farrow{height:30px;width:2px;margin:auto}}
+.trackgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-l);border:1px solid var(--line-l)}
+.trackgrid div{background:var(--paper);padding:18px 12px;text-align:center;font-size:15px;position:relative;line-height:1.6}
+.trackgrid div:before{content:"—";display:block;color:var(--badL);font:20px var(--m)}
+/* findings 7 */
+.ff{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line-d)}
+.ff article{padding:26px 22px 30px;border-bottom:1px solid var(--line-d);border-inline-start:1px solid var(--line-d);position:relative;font-size:15px;line-height:1.85}
+.ff article:nth-child(4n+1){border-inline-start:0}
+.ff article>b{font:700 54px/1 var(--m);color:#ffffff1f;display:block;margin-bottom:6px;transition:color .8s}
+.in .ff article>b{color:var(--acc)}
+.ff h4{font-size:18px;margin-bottom:8px}
+.ff article.hot{grid-column:span 2;background:var(--ink2);border-top:2px solid var(--bad)}
+.ff article.hot>b{color:var(--bad)!important}
+.ff article p{font-size:15px;margin:0 0 8px}
+@media(max-width:1000px){.ff{grid-template-columns:1fr 1fr}.ff article:nth-child(4n+1){border-inline-start:1px solid var(--line-d)}.ff article.hot{grid-column:span 2}}
+@media(max-width:600px){.ff{grid-template-columns:1fr}.ff article.hot{grid-column:auto}}
+/* bridge */
+#bridge{background:linear-gradient(180deg,var(--ink) 0,#101a1a 100%)}
+.bridge-q{display:flex;gap:30px;align-items:baseline;flex-wrap:wrap;margin-bottom:50px}
+.bridge-q h2{font-size:clamp(40px,6vw,92px);line-height:1.3}
+.bridge-q .arr{flex:1;min-width:80px;height:2px;background:var(--acc);transform-origin:right;transform:scaleX(0);transition:transform 1.4s .4s;align-self:center}
+.in .arr{transform:scaleX(1)}
+.map{display:grid;grid-template-columns:1fr 60px 1fr;gap:0}
+.map>div.row{display:contents}
+.map .a,.map .z{padding:14px 18px;border-bottom:1px solid var(--line-d);font-size:15px;line-height:1.7}
+.map .a{color:var(--mut-d)}.map .z b{color:var(--acc);font:12px var(--m);margin-inline-end:8px}
+.map .c{border-bottom:1px solid var(--line-d);display:flex;align-items:center;justify-content:center;color:var(--acc)}
+.mh{font:12px var(--m);color:var(--mut-d);padding:0 18px 10px;direction:ltr;text-align:right}
+@media(max-width:700px){.map{grid-template-columns:1fr 30px 1fr}.map .a,.map .z{padding:10px 6px;font-size:13px}}
+/* roadmap */
+#road{height:760vh;background:var(--ink);padding:0}
+.stage{position:sticky;top:0;height:100vh;padding:84px 6vw 30px;display:flex;flex-direction:column;overflow:hidden}
+.rail{position:relative;margin:6px 0 20px;direction:rtl}
+.rail .line{position:absolute;top:19px;inset-inline:19px;height:2px;background:var(--line-d)}
+.rail .line i{position:absolute;inset-block:0;right:0;width:0;background:var(--acc);transition:width .7s}
+.nodes{position:relative;display:flex;justify-content:space-between}
+.nd{background:none;border:0;color:var(--mut-d);cursor:pointer;font-family:var(--f);text-align:center;width:16.6%;padding:0}
+.nd b{display:flex;margin:0 auto 8px;width:40px;height:40px;border:1.5px solid var(--line-d);background:var(--ink);align-items:center;justify-content:center;font:500 16px var(--m);transition:.4s;position:relative;z-index:2}
+.nd span{font-size:12.5px;line-height:1.4;display:block;transition:.4s}
+.nd.done b{border-color:var(--acc);color:var(--acc)}
+.nd.cur b{background:var(--acc);border-color:var(--acc);color:var(--ink);transform:scale(1.18)}
+.nd.cur span{color:var(--tx-d)}
+.mp{flex:1;position:relative;min-height:0}
+.month{position:absolute;inset:0;opacity:0;pointer-events:none;transform:translateY(18px);transition:opacity .6s,transform .6s;display:grid;grid-template-columns:.8fr 1.5fr .8fr;gap:42px;overflow:auto}
+.month.on{opacity:1;pointer-events:auto;transform:none}
+.month .mn{font:700 clamp(100px,16vw,240px)/1 var(--m);color:transparent;-webkit-text-stroke:1px var(--acc);direction:ltr;text-align:right;opacity:.9}
+.month h3{font-size:clamp(24px,2.6vw,38px);line-height:1.45;margin:6px 0 14px}
+.lab{font:12px var(--m);color:var(--acc);direction:ltr;text-align:right;margin-bottom:8px;letter-spacing:.06em}
+.month .obj{font-size:17px;color:var(--tx-d)}
+.month .tasks h5{font-size:14px;color:var(--mut-d);font-weight:500;margin:12px 0 2px}
+.month .tasks ul{list-style:none;columns:1}
+.month .tasks li{padding:5px 0;border-bottom:1px solid var(--line-d);font-size:14.5px;line-height:1.7;display:flex;gap:10px}
+.month .tasks li:before{content:"";flex:none;width:6px;height:6px;margin-top:11px;background:var(--acc)}
+.month .tasks li.sub{padding-inline-start:20px;color:#c3ccd6}
+.month .tasks p{font-size:14.5px;margin:6px 0;color:#c3ccd6;max-width:none}
+.month .tasks .two{display:grid;grid-template-columns:1fr 1fr;gap:0 26px}
+.month .tgt{border:1px solid var(--acc);padding:22px;align-self:start;background:#d8f24a0d;font-size:16px;line-height:1.9}
+.month .tgt .lab{color:var(--acc)}
+.mfoot{display:flex;justify-content:space-between;font:12px var(--m);color:var(--mut-d);direction:ltr;padding-top:12px}
+@media(max-width:1000px){.month{grid-template-columns:1fr;gap:14px}.month .mn{display:none}.stage{padding-top:76px}.nd span{display:none}.month .tasks .two{grid-template-columns:1fr}}
+/* summary */
+.ladder{display:flex;flex-direction:column;border-top:1px solid var(--line-l)}
+.ladder .st{display:grid;grid-template-columns:90px 1fr 1.6fr;gap:20px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line-l);position:relative}
+.ladder .st:before{content:"";position:absolute;inset-inline-end:0;bottom:-1px;height:2px;background:var(--accL);width:0;transition:width 1s calc(var(--i)*.25s)}
+.in .ladder .st:before{width:calc(var(--i)*100%/6)}
+.ladder .st .m{font:12px var(--m);color:var(--mut-l)}
+.ladder .st .m b{display:block;font:700 40px/1 var(--m);color:var(--tx-l)}
+.ladder .st .f{font-size:19px;font-weight:600;line-height:1.5}
+.ladder .st .o{font-size:14.5px;color:var(--mut-l);line-height:1.7}
+.ladder .st .f span{margin-inline-start:0}
+@media(max-width:700px){.ladder .st{grid-template-columns:60px 1fr}.ladder .st .o{display:none}}
+/* final */
+.tg{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-d);border:1px solid var(--line-d);margin:34px 0}
+.tg div{background:var(--ink);padding:26px 20px;min-height:140px;display:flex;flex-direction:column;justify-content:space-between;font-size:17px;line-height:1.6;transition:background .5s}
+.tg div:hover{background:var(--ink2)}
+.tg div i{font:normal 12px var(--m);color:var(--acc);direction:ltr;text-align:right}
+@media(max-width:900px){.tg{grid-template-columns:1fr 1fr}}
+.finale{font-size:clamp(22px,2.6vw,36px);line-height:1.7;max-width:26em;font-weight:500;border-inline-start:3px solid var(--acc);padding-inline-start:26px}
+footer{background:var(--ink);color:var(--mut-d);text-align:center;padding:28px;font:12px var(--m);border-top:1px solid var(--line-d)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+<nav id="nav">
+  <div class="brand">TAHMAZ CO · SEO</div>
+  <div class="steps" id="steps">
+    <a href="#profile" data-c="0">فحص SEO</a>
+    <a href="#findings" data-c="1">النتائج</a>
+    <a href="#road" data-c="2">خطة 6 أشهر</a>
+    <a href="#target" data-c="3">النتيجة المستهدفة</a>
+  </div>
+</nav>
+
+<!-- COVER -->
+<section class="scene dark" id="cover" data-c="0">
+  <svg class="orbit" viewBox="0 0 400 400" fill="none" stroke="#d8f24a" stroke-width=".6" aria-hidden="true">
+    <circle cx="200" cy="200" r="190"/><circle cx="200" cy="200" r="140"/><circle cx="200" cy="200" r="90"/><circle cx="200" cy="200" r="40"/>
+    <path d="M10 200H390M200 10V390M65 65L335 335M335 65L65 335" stroke-opacity=".35"/>
+    <circle cx="302" cy="104" r="5" fill="#d8f24a"/><circle cx="130" cy="290" r="4" fill="#ff6246" stroke="none"/>
+  </svg>
+  <div class="wrap in" data-io>
+    <div class="kicker rv">SEO AUDIT · 6-MONTH PLAN</div>
+    <h1 class="rv" style="--d:1">تقرير فحص SEO شامل<br><em>وخطة SEO لمدة 6 أشهر</em></h1>
+    <div class="cmeta rv" style="--d:3">
+      <div><b>SITE</b><span class="num" style="font-family:var(--m)">https://tahmazco.com/</span></div>
+      <div><b>COMPANY</b>موقع Tahmaz Co</div>
+      <div><b>تاريخ الفحص</b>27 سبتمبر 2026</div>
+    </div>
+    <div class="journey rv" style="--d:5">
+      <a href="#profile"><span>01</span>الوضع الحالي</a>
+      <a href="#onpage"><span>02</span>ما الذي كشفه الفحص</a>
+      <a href="#findings"><span>03</span>أين توجد المشكلات والفرص</a>
+      <a href="#road"><span>04</span>ماذا سنفعل خلال 6 أشهر</a>
+      <a href="#target"><span>05</span>النتيجة المستهدفة</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROFILE -->
+<section class="scene light" id="profile" data-c="0">
+  <div class="wrap" data-io>
+    <div class="kicker rv">01 — اسم الموقع ومجال التخصص</div>
+    <div class="grid g2">
+      <div>
+        <h2 class="t rv">شركة عمر طهماز</h2>
+        <p class="rv" style="--d:1">شركة عمر طهماز هي شركة صناعية وتجارية سورية مقرها دمشق، تأسست عام 1970، وتعمل في مجموعة واسعة من القطاعات المرتبطة بالتجهيزات الصناعية والمنزلية، من أبرزها:</p>
+        <p class="rv mut" style="--d:2"><span class="num">https://tahmazco.com/</span></p>
+        <div class="note rv" style="--d:3">الموقع حالياً باللغة العربية فقط، ولا توجد نسخة إنجليزية. وبالنظر إلى طبيعة أعمال الشركة والمشاريع التي تعاملت معها، فقد يكون من المفيد مستقبلاً دراسة الحاجة إلى نسخة إنجليزية إذا كانت الشركة تستهدف جهات أو مشاريع إقليمية ودولية.</div>
+      </div>
+      <div class="sectors">
+        <div class="big rv"><span>تأسست</span><span class="num" data-count="1970">0</span></div>
+        <div class="rv" style="--d:1"><i>01</i>أنظمة التدفئة والتكييف المركزي.</div>
+        <div class="rv" style="--d:2"><i>02</i>تطبيقات الطاقة الشمسية، بما يشمل الألواح والبطاريات والإنفرترات.</div>
+        <div class="rv" style="--d:3"><i>03</i>التطبيقات الصناعية مثل الغلايات والصمامات والمحارق.</div>
+        <div class="rv" style="--d:4"><i>04</i>تطبيقات العزل، بما في ذلك الفيبرغلاس والصوف السيراميكي.</div>
+        <div class="rv" style="--d:5"><i>05</i>تطبيقات المياه والمضخات المنزلية والصناعية وأنظمة التحلية.</div>
+        <div class="rv" style="--d:6"><i>06</i>أنظمة التدفئة المنزلية.</div>
+        <div class="rv" style="--d:7"><i>07</i>ملحقات وتجهيزات الغاز.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ON PAGE -->
+<section class="scene dark" id="onpage" data-c="0">
+  <div class="wrap" data-io>
+    <div class="kicker rv">02 — الأون بيج · عناوين ووصف الميتا</div>
+    <div class="grid g2">
+      <div>
+        <div class="serp rv"><span class="tag">HOME</span><div class="u">https://tahmazco.com/</div><div class="ti">Tahmaz co</div><div class="ds">لا يوجد Meta Description</div></div>
+        <div class="serp rv" style="--d:2"><span class="tag">ABOUT</span><div class="u">https://tahmazco.com/ …</div><div class="ti">about – Tahmaz co</div><div class="ds">لا يوجد Meta Description</div></div>
+        <div style="margin-top:34px" class="rv">
+          <div class="fgrp">LANG</div>
+          <div class="bar" style="grid-template-columns:130px 1fr"><span class="lb">الوسم الحالي</span><span class="num bad" style="font-size:26px">lang="en-GB"</span></div>
+          <div class="bar" style="grid-template-columns:130px 1fr;margin-top:8px"><span class="lb">المطلوب</span><span class="num good" style="font-size:26px">ar &nbsp;/&nbsp; ar-SY</span></div>
+        </div>
+      </div>
+      <div>
+        <h2 class="t rv" style="font-size:clamp(30px,3.6vw,50px)">مشكلة واضحة في تحسين عناوين الصفحات</h2>
+        <p class="rv">هناك مشكلة واضحة في تحسين عناوين الصفحات Meta Titles، حيث إن العناوين الحالية قصيرة جداً ولا تصف محتوى الصفحات أو مجال عمل الشركة بشكل كافٍ.</p>
+        <p class="rv mut">فعلى سبيل المثال، عنوان الصفحة الرئيسية هو فقط Tahmaz co، بينما عنوان صفحة "عن الشركة" هو about – Tahmaz co. هذه العناوين لا تحتوي على الكلمات التي يمكن أن يبحث عنها العملاء، مثل التدفئة، التكييف، الطاقة الشمسية، التطبيقات الصناعية أو دمشق.</p>
+        <p class="rv mut">عدم تحسين العناوين يقلل قدرة محركات البحث على فهم موضوع كل صفحة وربطها بعبارات البحث المناسبة.</p>
+        <p class="rv mut">أما Meta Description فهو غير موجود في الصفحات التي تم فحصها، وبالتالي يقوم Google عادة باختيار جزء من محتوى الصفحة وعرضه تلقائياً في نتائج البحث. وهذا قد يؤدي إلى ظهور وصف غير مناسب أو غير مقنع للمستخدم، مما يؤثر في معدل النقر على الموقع.</p>
+        <p class="rv mut">كما أن بيانات Author وPublisher غير معرفة في الميتاداتا، وهو ما يعني أن الموقع لا يقدم إشارات واضحة لمحركات البحث حول الجهة المسؤولة عن المحتوى.</p>
+      </div>
+    </div>
+    <div class="grid g2" style="margin-top:56px;align-items:start">
+      <div class="rv"><h3 class="s">في المقابل، توجد بعض النقاط الإيجابية، مثل:</h3>
+        <ul class="l ok"><li>إعداد Robots يسمح بعرض معاينات كبيرة للصور.</li><li>روابط Canonical موجودة وصحيحة في الصفحات التي تم فحصها.</li></ul></div>
+      <div class="rv" style="--d:2"><h3 class="s bad">لكن يوجد خطأ مهم في تعريف لغة الموقع</h3>
+        <p class="mut">حيث إن وسم اللغة Lang مضبوط على en-GB رغم أن محتوى الموقع عربي بالكامل. ينبغي أن يكون تعريف اللغة عربياً مثل ar أو ar-SY حتى تتمكن محركات البحث من فهم الجمهور واللغة المستهدفة بشكل صحيح.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HEADINGS + LINKS -->
+<section class="scene light" id="structure" data-c="0">
+  <div class="wrap" data-io>
+    <div class="kicker rv">03 — بنية الصفحات (العناوين)</div>
+    <div class="grid g2" style="align-items:start">
+      <div>
+        <h2 class="t rv" style="font-size:clamp(30px,3.6vw,50px)">تسلسل العناوين وصفحات الخدمات</h2>
+        <p class="rv">الصفحة الرئيسية تحتوي على عنوان H1 واحد، وهذا جيد من ناحية الهيكل الأساسي للصفحة.</p>
+        <p class="rv">لكن الصفحة تحتوي كذلك على عدد كبير من عناوين H3 مقارنة بعدد H2، ويرتبط ذلك بوجود عدد كبير من أقسام المنتجات والخدمات ضمن الصفحة الرئيسية نفسها.</p>
+        <p class="rv">المشكلة الأكبر تظهر في صفحة "عن الشركة"، حيث تنتقل بنية الصفحة من H1 مباشرة إلى H3 دون استخدام H2. وهذا يجعل التسلسل الدلالي للعناوين غير منظم، ويصعب على محركات البحث فهم العلاقة بين أقسام المحتوى.</p>
+      </div>
+      <div class="rv" style="--d:2">
+        <div class="tree"><div class="n h1">H1</div><div class="ln r"></div><div class="gap">H2 — ✕</div><div class="ln r"></div><div class="row"><div class="n">H3</div><div class="n">H3</div></div></div>
+        <div class="cap">صفحة "عن الشركة": من H1 مباشرة إلى H3 دون H2</div>
+      </div>
+    </div>
+    <div class="grid g2" style="margin-top:70px;align-items:start">
+      <div class="rv">
+        <h3 class="s">صفحات هبوط مستقلة للخدمات</h3>
+        <p>كما أن الموقع لا يحتوي على صفحات هبوط مستقلة لمعظم الخدمات الرئيسية. وجود صفحات مستقلة لكل قطاع يساعد Google على فهم تخصص الشركة بشكل أفضل، كما يسمح باستهداف كلمات مفتاحية أكثر تحديداً بدلاً من جمع جميع الخدمات في صفحة واحدة.</p>
+        <p class="mut">من أصل سبع فئات أساسية تقريباً، توجد صفحة مستقلة فقط لقسم المياه.</p>
+      </div>
+      <div class="rv" style="--d:2">
+        <div class="dots">
+          <div style="--i:0">التدفئة والتكييف</div><div style="--i:1">الطاقة الشمسية</div><div style="--i:2">التطبيقات الصناعية</div><div style="--i:3">العزل</div><div class="f" style="--i:4">المياه</div><div style="--i:5">التدفئة المنزلية</div><div style="--i:6">الغاز</div>
+        </div>
+        <div class="cap" style="text-align:right">صفحة مستقلة فقط لقسم المياه</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="scene dark" id="links" data-c="0">
+  <div class="wrap" data-io>
+    <div class="kicker rv">04 — الربط الداخلي</div>
+    <div class="grid g2" style="align-items:start">
+      <div>
+        <h2 class="t rv" style="font-size:clamp(30px,3.6vw,50px)">عدد الروابط ليس منخفضاً… لكن المشكلة في طريقة استخدامها</h2>
+        <p class="rv">عدد الروابط الداخلية في الصفحات التي تم فحصها ليس منخفضاً، حيث تحتوي الصفحة الرئيسية على 41 رابطاً وصفحة "عن الشركة" على 37 رابطاً.</p>
+        <p class="rv">لكن المشكلة لا تتعلق فقط بعدد الروابط، وإنما بطريقة استخدامها.</p>
+        <p class="rv mut">بسبب عدم وجود صفحات مستقلة لمعظم الخدمات، فإن جزءاً كبيراً من الروابط الموجودة يبدو مرتبطاً بقوائم التنقل والهيدر والفوتر أكثر من كونه ربطاً سياقياً بين صفحات الخدمات والمحتوى.</p>
+        <p class="rv mut">الربط الداخلي الفعّال يجب أن يساعد المستخدم ومحركات البحث على الانتقال بين الخدمات والمنتجات والمشاريع والمحتوى ذي العلاقة.</p>
+      </div>
+      <div>
+        <div class="rv"><div class="fgrp">الروابط الداخلية</div>
+          <div class="bars">
+            <div class="bar"><span class="lb">الصفحة الرئيسية</span><div class="trk"><div class="fill" style="--w:100%"><span data-count="41">0</span></div></div></div>
+            <div class="bar"><span class="lb">عن الشركة</span><div class="trk"><div class="fill alt" style="--w:90.2%;--d:1"><span data-count="37">0</span></div></div></div>
+          </div></div>
+        <div class="rv" style="margin-top:44px;--d:2"><div class="fgrp">الصور</div>
+          <div class="bars">
+            <div class="bar"><span class="lb">الصفحة الرئيسية</span><div class="trk"><div class="fill" style="--w:100%"><span data-count="29">0</span></div></div></div>
+            <div class="bar"><span class="lb">عن الشركة</span><div class="trk"><div class="fill b" style="--w:10.3%;--d:1"><span data-count="3">0</span></div></div></div>
+          </div></div>
+        <p class="rv mut" style="margin-top:26px;font-size:15px">كما توجد فجوة في المحتوى البصري بين الصفحات. الصفحة الرئيسية تحتوي على 29 صورة، بينما تحتوي صفحة "عن الشركة" على 3 صور فقط. وبالنسبة إلى شركة ذات تاريخ طويل ومشاريع صناعية، يمكن أن يكون للمحتوى البصري دور مهم في تعزيز الثقة، خصوصاً صور المشاريع والفريق والمعدات ومواقع العمل.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNICAL -->
+<section class="scene dark" id="tech" data-c="0" style="background:#070b0f">
+  <div class="wrap" data-io>
+    <div class="kicker rv">05 — التكنيكال · سرعة موبايل · سرعة ديسكتوب · كورب وب فايتالز</div>
+    <h2 class="t rv">نتيجة الأداء على الموبايل والديسكتوب</h2>
+    <div class="grid g2" style="align-items:start;gap:70px">
+      <div>
+        <div class="gauges">
+          <div class="gauge rv" style="--p:63">
+            <div style="position:relative"><svg viewBox="0 0 120 120"><circle class="bg" cx="60" cy="60" r="52"/><circle class="pg" cx="60" cy="60" r="52"/></svg><div class="v"><b data-count="63">0</b><small>/100</small></div></div>
+            <h4>موبايل</h4><p>وهي نتيجة ضعيفة نسبياً وتحتاج إلى تحسين.</p>
+          </div>
+          <div class="gauge rv" style="--p:75;--d:2">
+            <div style="position:relative"><svg viewBox="0 0 120 120"><circle class="bg" cx="60" cy="60" r="52"/><circle class="pg m" cx="60" cy="60" r="52"/></svg><div class="v"><b data-count="75">0</b><small>/100</small></div></div>
+            <h4>ديسكتوب</h4><p>وهي نتيجة متوسطة.</p>
+          </div>
+        </div>
+        <div class="rv" style="margin-top:50px">
+          <div class="fgrp">LIGHTHOUSE — /100</div>
+          <div class="legend"><span><i style="background:var(--bad)"></i>موبايل</span><span><i style="background:var(--acc)"></i>ديسكتوب</span></div>
+          <div class="lh">
+            <span>Accessibility</span><div class="two"><div class="trk"><div class="fill b" style="--w:97%"><span>97</span></div></div><div class="trk"><div class="fill" style="--w:97%"><span>97</span></div></div></div>
+            <span>Best Practices</span><div class="two"><div class="trk"><div class="fill b" style="--w:85%"><span>85</span></div></div><div class="trk"><div class="fill" style="--w:96%"><span>96</span></div></div></div>
+            <span>SEO Score</span><div class="two"><div class="trk"><div class="fill b" style="--w:85%"><span>85</span></div></div><div class="trk"><div class="fill" style="--w:85%"><span>85</span></div></div></div>
+          </div>
+          <p class="mut" style="font-size:14px;margin-top:16px">Accessibility: 97/100 على الموبايل والديسكتوب. Best Practices: 85/100 على الموبايل، 96/100 على الديسكتوب. SEO Score في Lighthouse: 85/100 على كلا الجهازين.</p>
+        </div>
+      </div>
+      <div class="rv" style="--d:2">
+        <div class="fgrp">الزمن بالثواني · موبايل مقابل ديسكتوب</div>
+        <div class="legend"><span><i style="background:var(--bad)"></i>موبايل</span><span><i style="background:var(--acc)"></i>ديسكتوب</span></div>
+        <h3 class="s" style="font-size:18px">First Contentful Paint</h3>
+        <div class="bars" style="margin-bottom:34px">
+          <div class="bar"><span class="lb">موبايل</span><div class="trk"><div class="fill b" style="--w:22.8%"><span>3.8s</span></div></div></div>
+          <div class="bar"><span class="lb">ديسكتوب</span><div class="trk"><div class="fill" style="--w:4.2%;--d:1;justify-content:flex-start"></div><span class="num" style="position:absolute;left:calc(4.2% + 8px);top:6px;font-size:14px">0.7s</span></div></div>
+        </div>
+        <h3 class="s" style="font-size:18px">Largest Contentful Paint</h3>
+        <div class="bars">
+          <div class="bar"><span class="lb">موبايل</span><div class="trk"><div class="fill b" style="--w:100%"><span>16.7s</span></div></div></div>
+          <div class="bar"><span class="lb">ديسكتوب</span><div class="trk"><div class="fill" style="--w:23.4%;--d:1"><span>3.9s</span></div><div class="tick" style="left:15%"><span>2.5s</span></div></div></div>
+        </div>
+        <div class="axis"><span>0</span><span>16.7 s</span></div>
+        <p class="mut" style="font-size:15px;margin-top:24px">First Contentful Paint بلغ 0.7 ثانية على الديسكتوب، وهي نتيجة جيدة جداً، إلا أن Largest Contentful Paint بلغ 3.9 ثانية، بينما يفضل أن يكون أقل من 2.5 ثانية. بالتالي فإن أداء نسخة الديسكتوب أفضل بشكل واضح من الموبايل، لكنه ما يزال يحتاج إلى بعض التحسين.</p>
+      </div>
+    </div>
+    <div class="grid g2" style="margin-top:64px;align-items:start">
+      <div class="rv">
+        <span class="big-n bad" style="color:var(--bad)"><span data-count="16.7" data-dec="1">0</span><small>ثانية · LCP موبايل</small></span>
+        <p style="margin-top:16px">المشكلة الأبرز في Core Web Vitals هي Largest Contentful Paint – LCP. على الموبايل وصل إلى 16.7 ثانية، وهو أعلى بكثير من المستوى المقبول. وعلى الديسكتوب يبلغ 3.9 ثانية، وهو أيضاً أعلى من الهدف المثالي.</p>
+        <p class="mut">مشكلة LCP هي الأكثر أهمية هنا، لأنها تعني أن أكبر عنصر مرئي في الصفحة يحتاج وقتاً طويلاً جداً حتى يظهر للمستخدم. هذا يؤثر بشكل مباشر على تجربة مستخدمي الموبايل، وقد يؤدي إلى مغادرة نسبة من الزوار قبل اكتمال تحميل الصفحة.</p>
+        <p class="mut">أبرز المشاكل المسجلة على الموبايل: First Contentful Paint: 3.8 ثانية. Largest Contentful Paint: 16.7 ثانية.</p>
+      </div>
+      <div class="rv" style="--d:2">
+        <div class="note r">وفقاً للفحص، قد يرتبط ذلك بصور السلايدر أو الصور الرئيسية ذات الأحجام الكبيرة، أو بطريقة تحميل الصور، بالإضافة إلى احتمال وجود سكربتات أو إضافات ثقيلة ضمن ووردبريس.</div>
+        <div class="note">بالتالي فإن الأداء التقني ليس سيئاً في جميع الجوانب، لكن سرعة ظهور المحتوى الرئيسي على الموبايل تمثل المشكلة الأكثر إلحاحاً.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEMA -->
+<section class="scene light" id="schema" data-c="0">
+  <div class="wrap" data-io>
+    <div class="kicker rv">06 — سكيما</div>
+    <div class="grid g2" style="align-items:start">
+      <div>
+        <h2 class="t rv">لا يظهر وجود بيانات منظمة Schema / JSON-LD على الموقع</h2>
+        <p class="rv">غياب Schema يعني أن محركات البحث تحصل على معلومات أقل تنظيماً حول الشركة وخدماتها ومنتجاتها.</p>
+        <p class="rv mut">بالنسبة لشركة صناعية وتجارية محلية، يمكن أن تساعد البيانات المنظمة في توضيح معلومات الشركة والعنوان ووسائل التواصل والخدمات والمنتجات لمحركات البحث، كما تهيئ الموقع بصورة أفضل لبعض أنواع النتائج الغنية في Google.</p>
+      </div>
+      <div class="rv" style="--d:2">
+        <div class="fgrp" style="color:var(--mut-l)">أنواع Schema التي لا تظهر حالياً</div>
+        <div class="schema"><div>Organization</div><div>LocalBusiness</div><div>Product</div><div>BreadcrumbList</div></div>
+        <div class="cap" style="text-align:right">JSON-LD · لا يظهر</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section class="scene dark" id="content" data-c="0">
+  <div class="wrap" data-io>
+    <div class="kicker rv">07 — المحتوى</div>
+    <h2 class="t rv">مدونة · صفحات الخدمة · الصفحات الرئيسية · E-E-A-T</h2>
+    <div class="grid g2" style="align-items:start;gap:60px">
+      <div>
+        <h3 class="s rv">مدونة</h3>
+        <div class="tl rv"><div class="ax"></div><div class="ev"><span><b>2020</b> · Hello World</span><span>اليوم</span></div></div>
+        <p class="rv">الموقع لا يحتوي فعلياً على مدونة نشطة. خريطة الموقع الخاصة بالمقالات تحتوي فقط على منشور Hello World الافتراضي الخاص بووردبريس منذ عام 2020.</p>
+        <p class="rv mut">وهذا يعني أن الموقع لا يستفيد حالياً من المحتوى المعلوماتي لاستهداف عمليات البحث التي تسبق اتخاذ قرار الشراء أو التواصل مع الشركة. مجالات عمل الشركة توفر فرصاً كبيرة للمحتوى التقني والتعليمي، خاصة في مجالات التدفئة والطاقة الشمسية والعزل والمياه والتجهيزات الصناعية. غياب هذا النوع من المحتوى يجعل الظهور العضوي للموقع معتمداً بشكل شبه كامل على الصفحات الأساسية الموجودة حالياً.</p>
+        <h3 class="s rv" style="margin-top:40px">محتوى صفحات الخدمة</h3>
+        <p class="rv">هذه واحدة من أكبر نقاط الضعف في الموقع. معظم الخدمات والقطاعات التي تعمل بها الشركة لا تملك صفحات مستقلة. خريطة الموقع تظهر عدداً محدوداً جداً من الصفحات، ومن أصل سبع فئات أساسية تقريباً، توجد صفحة مستقلة فقط لقسم المياه.</p>
+        <p class="rv mut">هذا يحد بشكل كبير من قدرة الموقع على الظهور عند البحث عن خدمات محددة. فعلى سبيل المثال، من الصعب استهداف عمليات بحث مرتبطة بأنظمة العزل أو الغلايات الصناعية أو الطاقة الشمسية بشكل قوي إذا كانت المعلومات الخاصة بكل خدمة موجودة فقط كجزء صغير داخل الصفحة الرئيسية. الموقع يحتاج من ناحية البنية إلى إعطاء كل خدمة رئيسية مساحة مستقلة ومحتوى مخصصاً لها.</p>
+      </div>
+      <div>
+        <h3 class="s rv">محتوى الصفحات الرئيسية</h3>
+        <p class="rv">محتوى الصفحة الرئيسية وصفحة "عن الشركة" يحتوي على قدر من التكرار، خصوصاً في المعلومات المرتبطة بتاريخ تأسيس الشركة وكونها من الشركات القديمة في المجال. وجود معلومات متشابهة بين الصفحات ليس مشكلة بحد ذاته، لكن الأفضل أن يكون لكل صفحة هدف مختلف ومحتوى مميز.</p>
+        <p class="rv mut">كما أن المحتوى الحالي لا يقدم بالتفصيل بعض العناصر التي يمكن أن تعزز قوة الموقع، مثل:</p>
+        <ul class="l x rv"><li>الشهادات والاعتمادات.</li><li>إحصائيات حول المشاريع المنفذة.</li><li>دراسات حالة للمشاريع الكبرى.</li><li>تفاصيل أكبر حول خبرة الشركة.</li><li>توثيق المشاريع السابقة بصورة منظمة.</li></ul>
+        <p class="rv mut" style="margin-top:14px">وجود مشاريع مع جهات مثل مصفاة حمص ومؤسسات المياه في دمشق وحلب يمثل فرصة جيدة لبناء محتوى أقوى حول خبرة الشركة وسجل أعمالها.</p>
+        <h3 class="s rv" style="margin-top:40px">E-E-A-T</h3>
+        <p class="rv mut" style="margin-bottom:0">E-E-A-T يشير إلى:</p>
+        <div class="eeat rv">
+          <div><b>E</b><span>الخبرة</span><small>Experience</small></div><div><b>E</b><span>التخصص</span><small>Expertise</small></div><div><b>A</b><span>الموثوقية</span><small>Authoritativeness</small></div><div><b>T</b><span>الثقة</span><small>Trustworthiness</small></div>
+        </div>
+        <p class="rv">إشارات E-E-A-T في الموقع حالياً محدودة. لا يظهر بشكل واضح:</p>
+        <ul class="l x rv"><li>أسماء المهندسين أو المسؤولين.</li><li>شهادات الجودة أو الاعتمادات.</li><li>صور حقيقية للفريق.</li><li>الشراكات التجارية.</li><li>التراخيص أو الاعتمادات المهنية.</li></ul>
+        <div class="note rv" style="margin-top:20px">في المقابل، تأسيس الشركة عام 1970 يمثل أقوى عنصر ثقة موجود حالياً، ولكنه لا يتم استثماره بالشكل الكافي ضمن تصميم ومحتوى الموقع. خبرة تتجاوز خمسة عقود يمكن أن تكون عنصراً رئيسياً في بناء المصداقية، إلى جانب المشاريع السابقة والعملاء والشهادات والخبرات الفنية.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFPAGE -->
+<section class="scene light" id="offpage" data-c="0">
+  <div class="wrap" data-io>
+    <div class="kicker rv">08 — أوف بيج · روابط خارجية وظهور إلكتروني</div>
+    <div class="grid g2" style="align-items:start;gap:70px">
+      <div>
+        <h2 class="t rv" style="font-size:clamp(30px,3.6vw,50px)">الحضور الخارجي للموقع ضعيف جداً</h2>
+        <p class="rv">الحضور الخارجي للموقع ضعيف جداً وفق المعطيات الواردة في الفحص. لا تظهر روابط خارجية قوية أو إشارات واضحة إلى وجود استراتيجية Link Building منظمة.</p>
+        <p class="rv">الإشارة الخارجية التي تم العثور عليها كانت إعلان توظيف قديم على موقع آخر، وليست رابطاً قوياً يدعم سلطة الموقع.</p>
+        <p class="rv mut">هذا يعني أن الموقع لا يستفيد حالياً بشكل فعّال من المواقع الخارجية أو الأدلة التجارية أو المواقع الصناعية أو الشراكات لبناء موثوقيته الرقمية.</p>
+      </div>
+      <div class="rv" style="--d:2">
+        <div class="fgrp" style="color:var(--mut-l)">الظهور الإلكتروني</div>
+        <svg viewBox="0 0 460 300" style="width:100%;max-width:520px;direction:ltr" aria-label="خريطة الحضور الرقمي">
+          <line x1="230" y1="150" x2="80" y2="60" stroke="#0e5a52" stroke-width="1.5"/>
+          <line x1="230" y1="150" x2="380" y2="60" stroke="#c2381f" stroke-width="1.5" stroke-dasharray="5 5"/>
+          <line x1="230" y1="150" x2="80" y2="250" stroke="#c2381f" stroke-width="1.5" stroke-dasharray="5 5"/>
+          <line x1="230" y1="150" x2="380" y2="250" stroke="#c2381f" stroke-width="1.5" stroke-dasharray="5 5"/>
+          <rect x="170" y="125" width="120" height="50" fill="#10161d"/><text x="230" y="156" fill="#f2eee6" text-anchor="middle" font-family="IBM Plex Mono" font-size="14">tahmazco.com</text>
+          <rect x="10" y="38" width="140" height="44" fill="#0e5a52"/><text x="80" y="65" fill="#fff" text-anchor="middle" font-family="IBM Plex Mono" font-size="13">Facebook ✓</text>
+          <rect x="310" y="38" width="140" height="44" fill="none" stroke="#c2381f" stroke-dasharray="4 4"/><text x="380" y="65" fill="#c2381f" text-anchor="middle" font-family="IBM Plex Mono" font-size="12">Google Business ?</text>
+          <rect x="10" y="228" width="140" height="44" fill="none" stroke="#c2381f" stroke-dasharray="4 4"/><text x="80" y="255" fill="#c2381f" text-anchor="middle" font-family="IBM Plex Mono" font-size="13">LinkedIn ✕</text>
+          <rect x="310" y="228" width="140" height="44" fill="none" stroke="#c2381f" stroke-dasharray="4 4"/><text x="380" y="255" fill="#c2381f" text-anchor="middle" font-family="IBM Plex Mono" font-size="13">Instagram ✕</text>
+        </svg>
+      </div>
+    </div>
+    <div class="grid g3" style="margin-top:40px;align-items:start;gap:34px">
+      <div class="rv"><h3 class="s good">فيسبوك</h3><p>توجد صفحة فيسبوك نشطة باسم: Omar Tahmaz Company - شركة عمر طهماز</p><p class="mut" style="font-size:15px">وهي نقطة إيجابية لأنها توفر حضوراً رقمياً إضافياً للشركة خارج الموقع.</p></div>
+      <div class="rv" style="--d:1"><h3 class="s bad">Google Business Profile</h3><p>لكن لا يوجد، وفق المعطيات المتاحة، دليل على وجود Google Business Profile مكتمل وفعال.</p><p class="mut" style="font-size:15px">وجود ملف Google Business Profile مهم جداً لأي شركة لها مقر فعلي وتستهدف عملاء ضمن منطقة جغرافية محددة، لأنه يساعد في الظهور على Google Maps ونتائج البحث المحلية.</p></div>
+      <div class="rv" style="--d:2"><h3 class="s bad">LinkedIn · Instagram</h3><p>كما لا يوجد ظهور واضح لحسابات نشطة على LinkedIn أو Instagram ضمن المعلومات المتاحة في الفحص.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONVERSIONS -->
+<section class="scene dark" id="conv" data-c="0">
+  <div class="wrap" data-io>
+    <div class="kicker rv">09 — التحويلات</div>
+    <h2 class="t rv">قنوات التحويل · سهولة القنوات · مراقبة القنوات</h2>
+    <div class="grid g2" style="align-items:start;gap:64px">
+      <div>
+        <p class="rv">قناة التحويل الرئيسية الظاهرة حالياً هي نموذج التواصل الموجود في صفحة Contact، إلى جانب خريطة Google.</p>
+        <div class="flow rv" style="margin:34px 0">
+          <div class="fnode">الزائر</div><div class="farrow"></div>
+          <div class="fbranch"><div class="fnode on">نموذج التواصل — صفحة Contact</div><div class="fnode on">خريطة Google</div>
+            <div class="fnode dim">واتساب</div><div class="fnode dim">زر اتصال مباشر بارز</div><div class="fnode dim">زر طلب عرض سعر</div><div class="fnode dim">قناة تواصل سريعة ومباشرة عبر الموبايل</div></div>
+        </div>
+        <p class="mut rv">لا يظهر وجود قنوات تحويل مباشرة أخرى بشكل واضح مثل: واتساب. زر اتصال مباشر بارز. زر طلب عرض سعر. قناة تواصل سريعة ومباشرة عبر الموبايل. بالنسبة لطبيعة عمل الشركة، فإن توفير أكثر من قناة للتواصل يمكن أن يسهل على العملاء المحتملين اتخاذ الخطوة التالية.</p>
+        <h3 class="s rv" style="margin-top:36px">سهولة القنوات (فورم – واتساب – الاتصال)</h3>
+        <p class="rv">سهولة الوصول إلى قنوات التواصل تحتاج إلى تحسين. عدم وجود زر واتساب واضح أو رقم هاتف قابل للنقر بشكل بارز يقلل من سرعة التواصل، خصوصاً لمستخدمي الهواتف المحمولة.</p>
+        <p class="rv mut">كما أن الاعتماد بشكل أساسي على نموذج التواصل قد يضيف خطوة إضافية قبل أن يتمكن المستخدم من الحديث مباشرة مع الشركة. يُفضل بشكل عام أن تكون خيارات التواصل ظاهرة بوضوح من مختلف الصفحات، وليس فقط من صفحة الاتصال.</p>
+      </div>
+      <div class="rv" style="--d:2;background:var(--paper);color:var(--tx-l);padding:34px">
+        <h3 class="s">مراقبة قنوات التحويل</h3>
+        <p style="font-size:16px">لا يوجد دليل ظاهر في المعطيات الحالية على وجود نظام متكامل لمراقبة التحويلات مثل:</p>
+        <div class="trackgrid"><div>Google Analytics</div><div>Google Tag Manager</div><div>Meta Pixel</div><div>تتبع إرسال النماذج</div><div>تتبع نقرات الاتصال</div><div>تتبع نقرات واتساب</div></div>
+        <p style="font-size:15px;margin-top:22px;color:var(--mut-l)">غياب قياس التحويلات يجعل من الصعب معرفة ما إذا كانت الزيارات القادمة من Google أو القنوات الأخرى تتحول فعلياً إلى اتصالات أو فرص بيع. وجود نظام تتبع واضح ضروري لقياس قيمة أعمال SEO مستقبلاً، وليس فقط عدد الزيارات والترتيب.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINDINGS -->
+<section class="scene dark" id="findings" data-c="1" style="background:#0e1318">
+  <div class="wrap" data-io>
+    <div class="kicker rv">10 — النتائج · ملاحظات إضافية ومشاكل خاصة بالموقع</div>
+    <h2 class="t rv">ما الذي وجده الفحص في الموقع نفسه</h2>
+    <div class="ff">
+      <article class="hot rv"><b>7</b><h4>سرعة الموبايل هي المشكلة التقنية الأكثر أهمية</h4><p>وصول LCP على الموبايل إلى 16.7 ثانية يمثل المشكلة التقنية الأبرز في الفحص.</p><p class="mut">تحسين هذه النقطة يجب أن يكون من الأولويات، لأن بطء ظهور المحتوى الرئيسي يمكن أن يؤثر على تجربة المستخدم ومعدلات مغادرة الموقع، وبالتالي يحد من الاستفادة من أي تحسينات SEO أخرى يتم تنفيذها.</p></article>
+      <article class="rv" style="--d:1"><b>1</b><h4>وجود صفحة Test منشورة</h4><p>توجد صفحة تحت الرابط /test/ منشورة على الموقع ومضافة إلى Sitemap.</p><p class="mut">الصفحة تحتوي على محتوى تجريبي، وبالتالي وجودها على الموقع العام يعطي إشارات سلبية حول جودة وإدارة المحتوى. يفضل حذف الصفحة أو منع فهرستها.</p></article>
+      <article class="rv" style="--d:2"><b>2</b><h4>تعريف لغة الموقع بشكل خاطئ</h4><p>الموقع عربي بالكامل، لكن كود الصفحة يعرّف اللغة على أنها en-GB.</p><p class="mut">يجب تصحيح هذا الإعداد إلى لغة عربية مناسبة مثل ar أو ar-SY.</p></article>
+      <article class="rv" style="--d:3"><b>3</b><h4>منشور Hello World ما زال موجوداً</h4><p>منشور WordPress الافتراضي Hello World ما زال منشوراً منذ عام 2020.</p><p class="mut">وجوده يعطي انطباعاً بأن أجزاء من الموقع لم تتم إدارتها أو مراجعتها منذ إطلاقه.</p></article>
+      <article class="rv" style="--d:4"><b>4</b><h4>قدم آخر تحديثات الموقع</h4><p>بحسب Sitemap، يعود آخر تحديث مسجل للصفحات إلى أبريل 2020.</p><p class="mut">هذا يعني أن الموقع لم يحصل على تحديثات محتوى جوهرية منذ عدة سنوات. في موقع تجاري وصناعي، وجود محتوى حديث حول الخدمات والمشاريع والمنتجات والأخبار يساعد على إبقاء الموقع أكثر موثوقية وملاءمة لمحركات البحث والمستخدمين.</p></article>
+      <article class="rv" style="--d:5"><b>5</b><h4>عدم وجود نسخة إنجليزية</h4><p>الموقع متوفر باللغة العربية فقط.</p><p class="mut">إذا كانت الشركة تستهدف مستقبلاً شركات دولية أو جهات خارج سوريا أو مناقصات ومشاريع إقليمية، فقد يكون من المناسب تقييم إنشاء نسخة إنجليزية كاملة ومنظمة للموقع.</p></article>
+      <article class="rv" style="--d:6"><b>6</b><h4>ضعف المحتوى البصري في صفحة عن الشركة</h4><p>تحتوي صفحة "عن الشركة" على عدد محدود جداً من الصور مقارنة بالرئيسية.</p><p class="mut">إضافة صور حقيقية للفريق والمشاريع والمنشآت والمعدات يمكن أن تساعد بشكل واضح في تعزيز الثقة وإظهار حجم خبرة الشركة.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- BRIDGE -->
+<section class="scene dark" id="bridge" data-c="1">
+  <div class="wrap" data-io>
+    <div class="kicker rv">11 — من الفحص إلى الخطة</div>
+    <div class="bridge-q rv"><h2>ماذا وجدنا؟</h2><div class="arr"></div><h2 style="color:var(--acc)">ماذا سنفعل؟</h2></div>
+    <div class="mh" style="display:grid;grid-template-columns:1fr 60px 1fr;padding:0"><span style="text-align:right;padding:0 18px 10px">في الفحص</span><span></span><span style="text-align:right;padding:0 18px 10px">في الخطة</span></div>
+    <div class="map rv">
+      <div class="a">LCP على الموبايل: 16.7 ثانية · صور السلايدر والصور الكبيرة</div><div class="c">←</div><div class="z"><b>01</b>تحسين سرعة الموقع على الموبايل، مع إعطاء الأولوية لمشكلة LCP.</div>
+      <div class="a">وسم اللغة en-GB · صفحة /test/ · Hello World · عناوين Meta · تسلسل H1 / H2 / H3</div><div class="c">←</div><div class="z"><b>01</b>تصحيح وسم اللغة، حذف /test/ وHello World، تحسين Meta Titles وكتابة Meta Descriptions، تصحيح H1 / H2 / H3.</div>
+      <div class="a">معظم الخدمات بلا صفحات مستقلة</div><div class="c">←</div><div class="z"><b>02</b>إعطاء الخدمات الرئيسية صفحات أوضح بدلاً من جمع معظمها داخل الصفحة الرئيسية.</div>
+      <div class="a">إشارات E-E-A-T محدودة · صفحة "عن الشركة" · المشاريع</div><div class="c">←</div><div class="z"><b>03</b>إبراز خبرة الشركة وتاريخها بشكل أفضل لزيادة الثقة.</div>
+      <div class="a">لا توجد مدونة نشطة</div><div class="c">←</div><div class="z"><b>04</b>إطلاق محتوى معلوماتي بسيط وبناء مدونة مرتبطة مباشرة بخدمات الشركة.</div>
+      <div class="a">الربط الداخلي · غياب Schema</div><div class="c">←</div><div class="z"><b>05</b>تحسين بنية الموقع والربط الداخلي وإضافة Schema الأساسية.</div>
+      <div class="a">قنوات التحويل · غياب مراقبة التحويلات</div><div class="c">←</div><div class="z"><b>06</b>تحسين قدرة الموقع على تحويل الزيارات إلى استفسارات فعلية وقياس النتائج.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="road" data-c="2">
+  <div class="stage">
+    <div class="kicker" style="margin-bottom:6px">12 — خطة SEO لمدة 6 أشهر · الهدف العام</div>
+    <p id="goal" style="font-size:14.5px;max-width:none;margin-bottom:10px;color:#c3ccd6;line-height:1.7">خلال الأشهر الستة سيكون التركيز على تحسين الأساس التقني للموقع، تنظيم صفحات الخدمات، تطوير المحتوى الحالي، وإبراز خبرة الشركة ومشاريعها بشكل أوضح. الهدف هو بناء موقع أكثر وضوحاً لمحركات البحث وأكثر إقناعاً للعملاء، دون تحميل المشروع بعدد كبير من المهام في وقت واحد.</p>
+    <div class="rail"><div class="line"><i id="rfill"></i></div><div class="nodes" id="nodes"></div></div>
+    <div class="mp" id="mp"></div>
+    <div class="mfoot"><span id="mcount">01 / 06</span><span>SCROLL ↓ أو اختر الشهر</span></div>
+  </div>
+</section>
+
+<!-- SUMMARY -->
+<section class="scene light" id="summary" data-c="2">
+  <div class="wrap" data-io>
+    <div class="kicker rv">13 — ملخص الخطة</div>
+    <h2 class="t rv">ستة أشهر، ستة تركيزات</h2>
+    <div class="ladder">
+      <div class="st rv" style="--i:1"><div class="m">الشهر الأول<b>01</b></div><div class="f">Technical SEO وتنظيف الموقع</div><div class="o">الإصلاحات التقنية والأساسية</div></div>
+      <div class="st rv" style="--i:2"><div class="m">الشهر الثاني<b>02</b></div><div class="f">تطوير أهم صفحات الخدمات</div><div class="o">تحسين صفحات الخدمات</div></div>
+      <div class="st rv" style="--i:3"><div class="m">الشهر الثالث<b>03</b></div><div class="f">صفحة الشركة والمشاريع والثقة</div><div class="o">تحسين صفحة الشركة والمشاريع</div></div>
+      <div class="st rv" style="--i:4"><div class="m">الشهر الرابع<b>04</b></div><div class="f">إطلاق محتوى ومدونة بشكل محدود</div><div class="o">إطلاق محتوى معلوماتي بسيط</div></div>
+      <div class="st rv" style="--i:5"><div class="m">الشهر الخامس<b>05</b></div><div class="f">الربط الداخلي وSchema وتنظيم البنية</div><div class="o">تحسين بنية الموقع والربط الداخلي</div></div>
+      <div class="st rv" style="--i:6"><div class="m">الشهر السادس<b>06</b></div><div class="f">التحويلات والقياس ومراجعة الأداء</div><div class="o">التحويلات والمراجعة</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TARGET -->
+<section class="scene dark" id="target" data-c="3">
+  <div class="wrap" data-io>
+    <div class="kicker rv">14 — النتيجة المستهدفة بعد 6 أشهر</div>
+    <h2 class="t rv">بنهاية الفترة، يجب أن يكون الموقع قد أصبح أكثر تنظيماً من الناحية التقنية والمحتوى، مع:</h2>
+    <div class="tg">
+      <div class="rv"><i>01</i>سرعة وتجربة مستخدم أفضل.</div>
+      <div class="rv" style="--d:1"><i>02</i>صفحات خدمات أكثر وضوحاً.</div>
+      <div class="rv" style="--d:2"><i>03</i>صفحة شركة ومشاريع أقوى.</div>
+      <div class="rv" style="--d:3"><i>04</i>بداية مدونة مرتبطة بالخدمات.</div>
+      <div class="rv" style="--d:4"><i>05</i>بنية ربط داخلي أفضل.</div>
+      <div class="rv" style="--d:5"><i>06</i>بيانات منظمة أساسية.</div>
+      <div class="rv" style="--d:6"><i>07</i>قنوات تواصل أوضح.</div>
+      <div class="rv" style="--d:7"><i>08</i>نظام قياس يساعد على معرفة ما الذي يحقق نتائج فعلية.</div>
+    </div>
+    <p class="finale rv">التركيز في هذه المرحلة هو بناء أساس SEO قوي ومنظم بدلاً من التوسع الكبير في عدد المهام أو الدخول مبكراً في حملات روابط وظهور خارجي.</p>
+  </div>
+</section>
+<footer>TAHMAZ CO · تقرير فحص SEO — 27 سبتمبر 2026 · خطة SEO لمدة 6 أشهر</footer>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+/* count-up */
+function count(el){const t=+el.dataset.count,d=+(el.dataset.dec||0),s=performance.now(),D=1600;
+  (function f(n){const k=Math.min(1,(n-s)/D),e=1-Math.pow(1-k,3);el.textContent=(t*e).toFixed(d);if(k<1)requestAnimationFrame(f);else el.textContent=t.toFixed(d)})(s)}
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');$$('[data-count]',e.target).forEach(count);io.unobserve(e.target)}}),{threshold:.18});
+$$('[data-io]').forEach(el=>io.observe(el));
+/* chapter nav */
+const links=$$('#steps a');
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const c=+e.target.dataset.c;links.forEach(a=>a.classList.toggle('on',+a.dataset.c===c))}}),{rootMargin:'-45% 0px -50% 0px'});
+$$('[data-c]').forEach(s=>cio.observe(s));
+/* roadmap */
+const M=[
+{n:'الشهر الأول',t:'الإصلاحات التقنية والأساسية',o:'معالجة أهم المشاكل التقنية التي تؤثر على تجربة المستخدم وفهم محركات البحث للموقع.',
+ h:'الأعمال الرئيسية',l:['تحسين سرعة الموقع على الموبايل، مع إعطاء الأولوية لمشكلة LCP.','مراجعة الصور الكبيرة والسلايدر في الصفحة الرئيسية.','تصحيح وسم اللغة من en-GB إلى ar أو ar-SY.','حذف صفحة /test/ أو منع فهرستها.','حذف منشور Hello World.','تحسين Meta Titles للصفحات الرئيسية.','كتابة Meta Descriptions للصفحات الأساسية.','تصحيح بعض مشاكل H1 / H2 / H3.','مراجعة Sitemap بعد حذف الصفحات غير المطلوبة.'],two:1,
+ g:'تحسين الأساس التقني للموقع وتجهيزه بشكل أفضل لأعمال SEO اللاحقة.'},
+{n:'الشهر الثاني',t:'تحسين صفحات الخدمات',o:'إعطاء الخدمات الرئيسية صفحات أوضح بدلاً من جمع معظمها داخل الصفحة الرئيسية.',
+ h:'الأعمال الرئيسية',p:'البدء بأهم الخدمات فقط، وليس جميع الخدمات دفعة واحدة، مثل:',l:['التدفئة والتكييف المركزي.','الطاقة الشمسية.','التطبيقات الصناعية.','تطبيقات المياه.'],
+ h2:'لكل صفحة يتم:',l2:['كتابة عنوان واضح.','تحسين بنية H1 وH2.','إضافة محتوى يشرح الخدمة بشكل أفضل.','إضافة صور مناسبة إن توفرت.','إضافة وسيلة تواصل واضحة.','الربط بينها وبين الصفحات الأخرى ذات الصلة.'],
+ p2:'بعد ذلك يمكن استكمال بقية الخدمات تدريجياً في الأشهر التالية.',
+ g:'وجود صفحات أقوى يمكن لكل منها استهداف مجموعة كلمات بحث مختلفة.'},
+{n:'الشهر الثالث',t:'تحسين صفحة الشركة والمشاريع',o:'إبراز خبرة الشركة وتاريخها بشكل أفضل لزيادة الثقة.',
+ h:'صفحة "عن الشركة"',p:'تحسين الصفحة لتشمل بشكل أوضح:',l:['تأسيس الشركة عام 1970.','سنوات الخبرة.','مجالات العمل.','صور حقيقية للشركة أو الفريق إن توفرت.','معلومات عن الخبرات أو الاعتمادات المتوفرة.'],
+ h2:'صفحة المشاريع',p3:'إعادة تنظيم صفحة المشاريع بحيث لا تقتصر فقط على ذكر أسماء المشاريع. يمكن إضافة معلومات مختصرة مثل:',l2:['اسم المشروع.','نوع الخدمة المقدمة.','القطاع.','الموقع.','صورة المشروع عند توفرها.','وصف مختصر للأعمال.'],
+ p2:'خصوصاً أن وجود مشاريع مع جهات معروفة يمثل أحد أقوى عناصر الثقة الموجودة لدى الشركة.',
+ g:'جعل الموقع يعكس خبرة الشركة الفعلية بدلاً من الاكتفاء بمحتوى عام.'},
+{n:'الشهر الرابع',t:'إطلاق محتوى معلوماتي بسيط',o:'البدء ببناء مدونة مرتبطة مباشرة بخدمات الشركة. حالياً لا توجد مدونة فعلية، لذلك لا حاجة لإطلاق عدد كبير من المقالات مباشرة. يمكن البدء بوتيرة محدودة ومنتظمة.',
+ h:'الأعمال الرئيسية',l:['إعداد Keyword Research واختيار عدد محدود من المواضيع المهمة.'],p:'يمكن البدء مثلاً بمواضيع مثل:',l2:['كيفية اختيار مضخة المياه المناسبة.','أنواع العزل الحراري واستخداماتها.','كيفية اختيار نظام التدفئة المناسب.','أساسيات اختيار نظام الطاقة الشمسية.'],
+ p2:'مع ربط كل مقال بصفحة الخدمة المناسبة.',
+ g:'البدء بجذب زيارات معلوماتية مرتبطة مباشرة بالخدمات التي تقدمها الشركة.'},
+{n:'الشهر الخامس',t:'تحسين بنية الموقع والربط الداخلي',o:'جعل الصفحات الجديدة والحالية تعمل كمنظومة واحدة بدلاً من صفحات منفصلة.',
+ h:'الأعمال الرئيسية',l:['مراجعة الربط الداخلي بين صفحات الخدمات.','ربط المقالات بصفحات الخدمات.','ربط الخدمات بصفحة المشاريع.','إضافة روابط من الصفحة الرئيسية إلى أهم الخدمات.','تحسين Breadcrumbs عند الحاجة.','مراجعة الصفحات التي أصبحت ضعيفة أو مكررة بعد إنشاء الصفحات الجديدة.','تحسين توزيع المحتوى بين الصفحة الرئيسية وصفحة عن الشركة لتقليل التكرار.'],
+ h2:'Schema',p3:'إضافة Schema الأساسية المناسبة، مثل:',l2:['Organization.','LocalBusiness.','BreadcrumbList.'],p2:'وإضافة Service أو Product Schema فقط للصفحات التي تحتاجها.',
+ g:'تحسين فهم Google لبنية الموقع، ومساعدة المستخدم على الانتقال بين الخدمات والمحتوى بسهولة أكبر.'},
+{n:'الشهر السادس',t:'التحويلات والمراجعة',o:'تحسين قدرة الموقع على تحويل الزيارات إلى استفسارات فعلية وقياس النتائج.',
+ h:'تحسين قنوات التواصل',l:['إضافة زر واتساب إذا كان مناسباً لآلية عمل الشركة.','جعل رقم الهاتف قابلاً للنقر على الموبايل.','إضافة Call to Action واضح في صفحات الخدمات.','تحسين نموذج التواصل.','إضافة زر مثل "طلب عرض سعر" في الصفحات التجارية المهمة.'],
+ h2:'القياس',p3:'التأكد من إعداد:',l2:['Google Analytics 4.','Google Search Console.','Google Tag Manager عند الحاجة.'],p2:'مع تتبع أهم الإجراءات، مثل: إرسال نموذج التواصل. النقر على رقم الهاتف. النقر على واتساب. طلب عرض سعر.',
+ h3:'مراجعة أداء الأشهر السابقة',p4:'في نهاية الشهر السادس تتم مراجعة:',l3:['الصفحات التي حققت ظهوراً أفضل.','الكلمات التي بدأت بالصعود.','الصفحات ذات CTR ضعيف.','المقالات التي حصلت على Impressions.','صفحات الخدمات التي تحتاج إلى تطوير إضافي.','المشاكل التقنية المتبقية.'],p5:'ثم يتم بناء المرحلة التالية حسب البيانات الفعلية.',
+ g:'تحسين قدرة الموقع على تحويل الزيارات إلى استفسارات فعلية وقياس النتائج.',noTarget:1}
+];
+const li=a=>a.map(x=>`<li>${x}</li>`).join('');
+const nodes=$('#nodes'),mp=$('#mp');
+M.forEach((m,i)=>{
+  nodes.insertAdjacentHTML('beforeend',`<button class="nd" data-i="${i}"><b>${i+1}</b><span>${m.n}</span></button>`);
+  let b=`<h5>${m.h}</h5>`;
+  if(m.p)b+=`<p>${m.p}</p>`;
+  b+=`<ul>${li(m.l)}</ul>`;
+  if(m.h2)b+=`<h5>${m.h2}</h5>`;
+  if(m.p3)b+=`<p>${m.p3}</p>`;
+  if(m.l2)b+=`<ul>${li(m.l2)}</ul>`;
+  if(m.p2)b+=`<p>${m.p2}</p>`;
+  let tgt=`<div class="tgt"><div class="lab">TARGET · النتيجة المستهدفة</div>${m.g}</div>`;
+  if(m.h3)tgt=`<div class="tasks"><h5>${m.h3}</h5><p>${m.p4}</p><ul>${li(m.l3)}</ul><p>${m.p5}</p></div>`;
+  mp.insertAdjacentHTML('beforeend',`<div class="month" data-i="${i}"><div><div class="mn">0${i+1}</div><div class="lab">${m.n}</div><h3>${m.t}</h3><div class="lab">OBJECTIVE · الهدف</div><div class="obj">${m.o}</div></div><div class="tasks">${b}</div>${tgt}</div>`);
+});
+const road=$('#road'),nds=$$('.nd'),ms=$$('.month'),fill=$('#rfill');
+let cur=-1;
+function show(i){if(i===cur)return;cur=i;nds.forEach((n,k)=>{n.classList.toggle('cur',k===i);n.classList.toggle('done',k<i)});ms.forEach((m,k)=>m.classList.toggle('on',k===i));
+  fill.style.width=(i/5*100)+'%';$('#mcount').textContent='0'+(i+1)+' / 06'}
+show(0);
+function onScroll(){
+  const h=document.documentElement,p=h.scrollTop/(h.scrollHeight-innerHeight);$('#prog').style.width=(p*100)+'%';
+  const r=road.getBoundingClientRect(),span=r.height-innerHeight;
+  if(r.top<=0&&r.bottom>=innerHeight){const k=Math.min(5,Math.floor(-r.top/span*6));show(Math.max(0,k))}
+  else if(r.top>0)show(0);else show(5);
+}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+nds.forEach(n=>n.onclick=()=>{const i=+n.dataset.i,span=road.offsetHeight-innerHeight;scrollTo({top:road.offsetTop+span*(i+.5)/6,behavior:'smooth'})});
+</script>
+</body>
+</html>
